@@ -1,118 +1,75 @@
 {
-  "/tsr-spec/__docusaurus/debug-2a5": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
-  "/tsr-spec/__docusaurus/debug/config-d59": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
-  "/tsr-spec/__docusaurus/debug/content-15b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    },
-    "__props": "__props---tsr-spec-docusaurus-debug-content-15-a-cdd"
-  },
-  "/tsr-spec/__docusaurus/debug/globalData-370": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
-  "/tsr-spec/__docusaurus/debug/metadata-86c": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
-  "/tsr-spec/__docusaurus/debug/registry-b1f": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
-  "/tsr-spec/__docusaurus/debug/routes-ba7": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---tsr-spec-docusaurus-debugb-38-314"
-    }
-  },
   "/tsr-spec/-9d5": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---tsr-spec-aba-062"
+      "plugin": "aba21aa0"
     }
   },
   "/tsr-spec/-454": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---tsr-spec-f-61-014"
+    "__comp": "a7bd4aaa",
+    "__props": "f6125dc3"
   },
   "/tsr-spec/-976": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
+    "__comp": "a94703ab"
   },
   "/tsr-spec/actions-c34": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-actionsebc-d14"
+    "__comp": "17896441",
+    "content": "ebcc1277"
   },
   "/tsr-spec/conformance-93f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-conformance-0-a-4-766"
+    "__comp": "17896441",
+    "content": "0a4a6814"
   },
   "/tsr-spec/core-concepts-b09": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-core-concepts-6-e-4-7c7"
+    "__comp": "17896441",
+    "content": "6e438c5b"
   },
   "/tsr-spec/entities-84a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-entitiesf-9-b-759"
+    "__comp": "17896441",
+    "content": "f9ba813f"
   },
   "/tsr-spec/events-99d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-events-8-b-2-a3c"
+    "__comp": "17896441",
+    "content": "8b2778de"
   },
   "/tsr-spec/examples-da0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-examplesbf-6-89f"
+    "__comp": "17896441",
+    "content": "bf614533"
   },
   "/tsr-spec/host-contract-08d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-host-contract-641-36e"
+    "__comp": "17896441",
+    "content": "6410f05f"
   },
   "/tsr-spec/integration-a2f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-integrationf-58-bb9"
+    "__comp": "17896441",
+    "content": "f58cd18e"
   },
   "/tsr-spec/introduction-ead": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-introduction-1-cd-f32"
+    "__comp": "17896441",
+    "content": "1cda0596"
   },
   "/tsr-spec/patches-e94": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-patchesa-6-e-9bc"
+    "__comp": "17896441",
+    "content": "a6e7e276"
   },
   "/tsr-spec/runtime-behavior-7c1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-runtime-behaviora-03-d35"
+    "__comp": "17896441",
+    "content": "a0323273"
   },
   "/tsr-spec/security-model-8ba": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-security-model-145-6fe"
+    "__comp": "17896441",
+    "content": "14548d49"
   },
   "/tsr-spec/surface-model-c0a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-surface-model-4-a-6-86a"
+    "__comp": "17896441",
+    "content": "4a66adab"
   },
   "/tsr-spec/views-a38": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-views-2-f-1-afa"
+    "__comp": "17896441",
+    "content": "2f1d1fda"
   },
   "/tsr-spec/-632": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---tsr-spec-0-e-3-166"
+    "__comp": "17896441",
+    "content": "0e384e19"
   }
 }
