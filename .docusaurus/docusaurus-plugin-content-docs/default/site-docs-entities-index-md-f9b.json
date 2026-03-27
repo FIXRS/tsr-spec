@@ -1,0 +1,27 @@
+{
+  "id": "entities/entities",
+  "title": "Entities",
+  "description": "The typed objects, field model, and collections shown on a TSR surface.",
+  "source": "@site/docs/entities/index.md",
+  "sourceDirName": "entities",
+  "slug": "/entities/",
+  "permalink": "/tsr-spec/entities/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "entities",
+    "title": "Entities",
+    "description": "The typed objects, field model, and collections shown on a TSR surface."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Host Contract",
+    "permalink": "/tsr-spec/host-contract/"
+  },
+  "next": {
+    "title": "Views",
+    "permalink": "/tsr-spec/views/"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_compare_options_01",
+    "revision": 1,
+    "kind": "panel",
+    "intent": "compare_options",
+    "title": "Compare used phone listings",
+    "summary": "Three shortlisted listings with price, condition, storage, and shipping.",
+    "layout": {
+      "template": "split",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "aside", "role": "aside" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "listing_01",
+        "type": "Listing",
+        "title": "iPhone 13 128GB Blue",
+        "subtitle": "Seller rating 99.1%",
+        "fields": {
+          "price": { "value": 489, "sourceRef": "src_market_1" },
+          "condition": { "value": "used", "sourceRef": "src_market_1" },
+          "storage": { "value": "128GB", "sourceRef": "src_market_1" },
+          "shipping": { "value": "Free", "sourceRef": "src_market_1" },
+          "url": { "value": "https://example.org/listing/1", "sourceRef": "src_market_1" }
+        },
+        "badges": ["Recommended"],
+        "status": "available",
+        "score": 0.92,
+        "media": [
+          {
+            "kind": "image",
+            "url": "https://example.org/listings/01.jpg",
+            "alt": "Blue iPhone 13 front view"
+          }
+        ]
+      },
+      {
+        "id": "listing_02",
+        "type": "Listing",
+        "title": "iPhone 13 256GB Black",
+        "subtitle": "Certified refurbisher",
+        "fields": {
+          "price": { "value": 549, "sourceRef": "src_market_2" },
+          "condition": { "value": "refurbished", "sourceRef": "src_market_2" },
+          "storage": { "value": "256GB", "sourceRef": "src_market_2" },
+          "shipping": { "value": "15 USD", "sourceRef": "src_market_2" },
+          "url": { "value": "https://example.org/listing/2", "sourceRef": "src_market_2" }
+        },
+        "status": "available",
+        "score": 0.88
+      },
+      {
+        "id": "listing_03",
+        "type": "Listing",
+        "title": "iPhone 13 128GB Midnight",
+        "subtitle": "Local pickup available",
+        "fields": {
+          "price": { "value": 472, "sourceRef": "src_market_3" },
+          "condition": { "value": "used", "sourceRef": "src_market_3" },
+          "storage": { "value": "128GB", "sourceRef": "src_market_3" },
+          "shipping": { "value": "Pickup", "sourceRef": "src_market_3" },
+          "url": { "value": "https://example.org/listing/3", "sourceRef": "src_market_3" }
+        },
+        "status": "available",
+        "score": 0.9
+      }
+    ],
+    "collections": [
+      {
+        "id": "results",
+        "entityType": "Listing",
+        "items": ["listing_01", "listing_02", "listing_03"],
+        "selectionMode": "multi",
+        "compareLimit": 4,
+        "filters": {
+          "condition": ["used", "refurbished"]
+        },
+        "sort": {
+          "field": "price",
+          "direction": "asc"
+        },
+        "pagination": {
+          "cursor": "page_02",
+          "hasMore": true
+        }
+      }
+    ],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "3 shortlisted listings sorted by price."
+        }
+      },
+      {
+        "id": "filters",
+        "type": "filterRail",
+        "zone": "aside",
+        "sourceCollection": "results",
+        "props": {
+          "facets": ["price", "condition", "storage"]
+        }
+      },
+      {
+        "id": "compare",
+        "type": "compareMatrix",
+        "zone": "main",
+        "sourceCollection": "results",
+        "props": {
+          "columns": ["price", "condition", "storage", "shipping", "score"],
+          "stickyFirstColumn": true
+        },
+        "actions": ["save", "open", "buy"],
+        "emptyState": "Select at least two listings to compare."
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["save", "open", "buy"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "save",
+        "label": "Save shortlist",
+        "actionClass": "mutate",
+        "target": "selected",
+        "confirmation": "soft",
+        "invoke": {
+          "kind": "tool",
+          "ref": "shortlist.save"
+        },
+        "style": "secondary",
+        "reversible": true
+      },
+      {
+        "id": "open",
+        "label": "Open listing",
+        "actionClass": "navigate",
+        "target": "focused",
+        "confirmation": "soft",
+        "invoke": {
+          "kind": "navigate",
+          "ref": "entity.url"
+        },
+        "style": "secondary",
+        "requiresCapabilities": ["externalNavigation"]
+      },
+      {
+        "id": "buy",
+        "label": "Buy now",
+        "actionClass": "transact",
+        "target": "focused",
+        "confirmation": "hard",
+        "invoke": {
+          "kind": "host",
+          "ref": "checkout.request",
+          "params": {
+            "entityRef": "$state.focused"
+          }
+        },
+        "style": "primary",
+        "reversible": false,
+        "requiresCapabilities": ["checkout", "modal"]
+      }
+    ],
+    "state": {
+      "selected": ["listing_01", "listing_03"],
+      "focused": "listing_01",
+      "filters": {
+        "condition": ["used", "refurbished"]
+      },
+      "sort": {
+        "field": "price",
+        "direction": "asc"
+      },
+      "drafts": {},
+      "ui": {
+        "detailExpanded": false
+      },
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "transact", "confirmation": "hard" },
+        { "actionClass": "communicate", "confirmation": "hard" },
+        { "actionClass": "destructive", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": true,
+      "allowedCapabilities": ["checkout", "modal", "externalNavigation"],
+      "redactInVoice": ["price"],
+      "sourceBadgeRules": {
+        "showFor": ["price", "shipping"]
+      },
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_market_1",
+        "kind": "web",
+        "label": "Marketplace listing 1",
+        "uri": "https://example.org/listing/1",
+        "retrievedAt": "2026-03-27T10:00:00Z"
+      },
+      {
+        "id": "src_market_2",
+        "kind": "web",
+        "label": "Marketplace listing 2",
+        "uri": "https://example.org/listing/2",
+        "retrievedAt": "2026-03-27T10:00:00Z"
+      },
+      {
+        "id": "src_market_3",
+        "kind": "web",
+        "label": "Marketplace listing 3",
+        "uri": "https://example.org/listing/3",
+        "retrievedAt": "2026-03-27T10:00:00Z"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Comparing three used phone listings with filters for condition, price, and storage.",
+      "preferredFocus": "compare",
+      "landmarks": ["header", "main", "aside", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": true
+    }
+  }
+}

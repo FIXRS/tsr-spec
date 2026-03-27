@@ -1,0 +1,40 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "patch-sequences/compare-options.discovery-sequence.v0_1.json",
+  "fixtureKind": "patch-sequence",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [],
+  "expectedRuntimeState": {
+    "revision": 3,
+    "entityIdsContains": [
+      "listing_04",
+      "listing_05"
+    ],
+    "collectionLengths": {
+      "results": 2
+    },
+    "collectionItemsExact": {
+      "results": [
+        "listing_02",
+        "listing_05"
+      ]
+    },
+    "statePaths": {
+      "filters.condition": [
+        "refurbished"
+      ],
+      "selected": [
+        "listing_02",
+        "listing_05"
+      ],
+      "focused": "listing_05"
+    },
+    "noticesCount": 2,
+    "noticeMessagesExact": [
+      "Found 2 additional listings.",
+      "Showing refurbished matches first."
+    ]
+  }
+}

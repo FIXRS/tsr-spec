@@ -1,0 +1,11 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "invalid/surfaces/missing-zone-reference.v0_1.json",
+  "fixtureKind": "surface",
+  "expectedValidity": "invalid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [
+    "layout.zones.resolve"
+  ],
+  "requiredChecks": []
+}

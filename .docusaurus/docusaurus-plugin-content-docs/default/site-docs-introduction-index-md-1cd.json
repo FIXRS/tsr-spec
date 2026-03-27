@@ -1,0 +1,27 @@
+{
+  "id": "introduction/introduction",
+  "title": "Introduction",
+  "description": "Why TSR exists, what problem it solves, and the architectural frame for assistant-generated task surfaces.",
+  "source": "@site/docs/introduction/index.md",
+  "sourceDirName": "introduction",
+  "slug": "/introduction/",
+  "permalink": "/tsr-spec/introduction/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "introduction",
+    "title": "Introduction",
+    "description": "Why TSR exists, what problem it solves, and the architectural frame for assistant-generated task surfaces."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Task Surface Runtime (TSR)",
+    "permalink": "/tsr-spec/"
+  },
+  "next": {
+    "title": "Core Concepts",
+    "permalink": "/tsr-spec/core-concepts/"
+  }
+}

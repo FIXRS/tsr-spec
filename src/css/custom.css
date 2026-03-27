@@ -1,0 +1,34 @@
+:root {
+  --ifm-color-primary: #0f766e;
+  --ifm-color-primary-dark: #0d675f;
+  --ifm-color-primary-darker: #0b5f57;
+  --ifm-color-primary-darkest: #074742;
+  --ifm-color-primary-light: #13867d;
+  --ifm-color-primary-lighter: #15958b;
+  --ifm-color-primary-lightest: #20b6a9;
+  --ifm-font-color-base: #172033;
+  --ifm-heading-color: #172033;
+  --tsr-hero-grad-1: rgba(20, 184, 166, 0.22);
+  --tsr-hero-grad-2: rgba(15, 118, 110, 0.18);
+  --tsr-hero-surface-start: #f6fbfa;
+  --tsr-hero-surface-end: #ffffff;
+  --tsr-hero-accent-text: #074742;
+  --tsr-card-bg-start: #ffffff;
+  --tsr-card-bg-end: #f7fbfa;
+  --tsr-card-border: rgba(15, 118, 110, 0.12);
+  --tsr-card-shadow: rgba(12, 29, 44, 0.06);
+}
+
+[data-theme='dark'] {
+  --ifm-font-color-base: #e8f3f1;
+  --ifm-heading-color: #f4fbfa;
+  --tsr-hero-grad-1: rgba(32, 182, 169, 0.22);
+  --tsr-hero-grad-2: rgba(15, 118, 110, 0.16);
+  --tsr-hero-surface-start: #0f1719;
+  --tsr-hero-surface-end: #111a1d;
+  --tsr-hero-accent-text: #8fe3da;
+  --tsr-card-bg-start: #162125;
+  --tsr-card-bg-end: #10181b;
+  --tsr-card-border: rgba(143, 227, 218, 0.14);
+  --tsr-card-shadow: rgba(0, 0, 0, 0.28);
+}

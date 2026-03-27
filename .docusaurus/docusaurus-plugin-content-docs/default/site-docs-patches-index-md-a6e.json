@@ -1,0 +1,27 @@
+{
+  "id": "patches/patches",
+  "title": "Patches",
+  "description": "Incremental semantic updates to existing TSR surfaces.",
+  "source": "@site/docs/patches/index.md",
+  "sourceDirName": "patches",
+  "slug": "/patches/",
+  "permalink": "/tsr-spec/patches/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "patches",
+    "title": "Patches",
+    "description": "Incremental semantic updates to existing TSR surfaces."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Events",
+    "permalink": "/tsr-spec/events/"
+  },
+  "next": {
+    "title": "Runtime Behavior",
+    "permalink": "/tsr-spec/runtime-behavior/"
+  }
+}

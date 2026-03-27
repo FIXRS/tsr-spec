@@ -1,0 +1,178 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_growth_dashboard_01",
+    "revision": 18,
+    "kind": "artifact",
+    "intent": "explore_data",
+    "title": "Weekly growth dashboard",
+    "summary": "Saved dashboard showing signups, conversions, and campaign performance.",
+    "layout": {
+      "template": "dashboard",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "aside", "role": "aside" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "series_signups",
+        "type": "MetricSeries",
+        "title": "Weekly signups",
+        "fields": {
+          "unit": { "value": "count", "sourceRef": "src_metrics_query" },
+          "points": {
+            "value": [
+              { "x": "2026-03-01", "y": 1240 },
+              { "x": "2026-03-08", "y": 1315 },
+              { "x": "2026-03-15", "y": 1398 },
+              { "x": "2026-03-22", "y": 1484 }
+            ],
+            "sourceRef": "src_metrics_query"
+          }
+        },
+        "status": "fresh"
+      },
+      {
+        "id": "series_conversion",
+        "type": "MetricSeries",
+        "title": "Weekly conversion rate",
+        "fields": {
+          "unit": { "value": "percent", "sourceRef": "src_metrics_query" },
+          "points": {
+            "value": [
+              { "x": "2026-03-01", "y": 3.9 },
+              { "x": "2026-03-08", "y": 4.1 },
+              { "x": "2026-03-15", "y": 4.4 },
+              { "x": "2026-03-22", "y": 4.7 }
+            ],
+            "sourceRef": "src_metrics_query"
+          }
+        },
+        "status": "fresh"
+      }
+    ],
+    "collections": [
+      {
+        "id": "dashboard_series",
+        "entityType": "MetricSeries",
+        "items": ["series_signups", "series_conversion"],
+        "selectionMode": "single"
+      }
+    ],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "Saved dashboard with two weekly metrics and active campaign filter."
+        }
+      },
+      {
+        "id": "trend_chart",
+        "type": "chart",
+        "zone": "main",
+        "sourceCollection": "dashboard_series",
+        "props": {
+          "xField": "x",
+          "yField": "y",
+          "seriesField": "title"
+        },
+        "actions": ["refresh", "open_source"]
+      },
+      {
+        "id": "series_table",
+        "type": "dataTable",
+        "zone": "aside",
+        "sourceCollection": "dashboard_series",
+        "props": {
+          "columns": ["title", "status"]
+        }
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["refresh", "open_source"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "refresh",
+        "label": "Refresh data",
+        "actionClass": "query",
+        "target": "surface",
+        "confirmation": "none",
+        "invoke": {
+          "kind": "tool",
+          "ref": "metrics.refresh"
+        },
+        "style": "secondary",
+        "reversible": true
+      },
+      {
+        "id": "open_source",
+        "label": "Open query source",
+        "actionClass": "navigate",
+        "target": "surface",
+        "confirmation": "soft",
+        "invoke": {
+          "kind": "navigate",
+          "ref": "artifact.querySource"
+        },
+        "style": "secondary",
+        "requiresCapabilities": ["externalNavigation"]
+      }
+    ],
+    "state": {
+      "selected": ["series_signups"],
+      "focused": "series_signups",
+      "filters": {
+        "campaign": ["spring_launch"]
+      },
+      "sort": {},
+      "drafts": {},
+      "ui": {
+        "legendVisible": true
+      },
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "transact", "confirmation": "hard" },
+        { "actionClass": "communicate", "confirmation": "hard" },
+        { "actionClass": "destructive", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": true,
+      "allowedCapabilities": ["externalNavigation"],
+      "redactInVoice": [],
+      "sourceBadgeRules": {
+        "showFor": ["points"]
+      },
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_metrics_query",
+        "kind": "tool",
+        "label": "Analytics warehouse query",
+        "retrievedAt": "2026-03-27T10:20:00Z"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Saved growth dashboard showing weekly signups and conversion trends.",
+      "preferredFocus": "trend_chart",
+      "landmarks": ["header", "main", "aside", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "artifact",
+      "resumeKey": "artifact:growth-dashboard:weekly",
+      "promotable": true
+    }
+  }
+}

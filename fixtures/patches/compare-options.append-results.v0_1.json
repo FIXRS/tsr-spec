@@ -1,0 +1,50 @@
+{
+  "version": "tsr/0.1",
+  "patch": {
+    "patchId": "patch_compare_append_01",
+    "surfaceId": "surf_compare_options_01",
+    "baseRevision": 1,
+    "reason": "tool_result",
+    "ops": [
+      {
+        "op": "entity.upsert",
+        "entities": [
+          {
+            "id": "listing_04",
+            "type": "Listing",
+            "title": "iPhone 13 128GB Red",
+            "fields": {
+              "price": { "value": 465, "sourceRef": "src_market_1" },
+              "condition": { "value": "used", "sourceRef": "src_market_1" },
+              "storage": { "value": "128GB", "sourceRef": "src_market_1" },
+              "shipping": { "value": "Free", "sourceRef": "src_market_1" }
+            },
+            "status": "available"
+          },
+          {
+            "id": "listing_05",
+            "type": "Listing",
+            "title": "iPhone 13 256GB Green",
+            "fields": {
+              "price": { "value": 559, "sourceRef": "src_market_2" },
+              "condition": { "value": "refurbished", "sourceRef": "src_market_2" },
+              "storage": { "value": "256GB", "sourceRef": "src_market_2" },
+              "shipping": { "value": "Express", "sourceRef": "src_market_2" }
+            },
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "op": "collection.append",
+        "collectionId": "results",
+        "items": ["listing_04", "listing_05"]
+      },
+      {
+        "op": "notice.show",
+        "level": "info",
+        "message": "Found 2 additional listings."
+      }
+    ]
+  }
+}

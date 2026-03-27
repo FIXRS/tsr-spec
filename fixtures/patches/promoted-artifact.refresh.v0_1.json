@@ -1,0 +1,44 @@
+{
+  "version": "tsr/0.1",
+  "patch": {
+    "patchId": "patch_artifact_refresh_01",
+    "surfaceId": "surf_growth_dashboard_01",
+    "baseRevision": 18,
+    "reason": "tool_result",
+    "ops": [
+      {
+        "op": "entity.upsert",
+        "entities": [
+          {
+            "id": "series_signups",
+            "type": "MetricSeries",
+            "title": "Weekly signups",
+            "fields": {
+              "unit": { "value": "count", "sourceRef": "src_metrics_query" },
+              "points": {
+                "value": [
+                  { "x": "2026-03-08", "y": 1315 },
+                  { "x": "2026-03-15", "y": 1398 },
+                  { "x": "2026-03-22", "y": 1484 },
+                  { "x": "2026-03-29", "y": 1536 }
+                ],
+                "sourceRef": "src_metrics_query"
+              }
+            },
+            "status": "fresh"
+          }
+        ]
+      },
+      {
+        "op": "state.set",
+        "path": "state.ui.lastRefreshAt",
+        "value": "2026-03-27T10:40:00Z"
+      },
+      {
+        "op": "notice.show",
+        "level": "success",
+        "message": "Dashboard data refreshed."
+      }
+    ]
+  }
+}

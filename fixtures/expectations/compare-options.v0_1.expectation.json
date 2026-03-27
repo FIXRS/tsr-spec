@@ -1,0 +1,26 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "surfaces/compare-options.v0_1.json",
+  "expectedValidity": "valid",
+  "expectedDiagnostics": [],
+  "expectedSurface": {
+    "id": "surf_compare_options_01",
+    "revision": 1,
+    "kind": "panel",
+    "intent": "compare_options",
+    "persistence": "ephemeral"
+  },
+  "requiredChecks": [
+    "document.version.supported",
+    "surface.id.present",
+    "surface.revision.monotonic",
+    "layout.zones.resolve",
+    "collections.items.resolve",
+    "views.bindings.resolve",
+    "actions.targets.resolve",
+    "actions.high_risk_confirmation.enforced",
+    "sources.references.resolve",
+    "state.focused.resolve",
+    "state.selected.resolve"
+  ]
+}

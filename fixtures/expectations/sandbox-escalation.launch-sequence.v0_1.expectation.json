@@ -1,0 +1,28 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "patch-sequences/sandbox-escalation.launch-sequence.v0_1.json",
+  "fixtureKind": "patch-sequence",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [],
+  "expectedRuntimeState": {
+    "revision": 6,
+    "status": "closed",
+    "statePaths": {
+      "ui.launchIntent": "ui://workflow-editor",
+      "ui.launchMode": "fullscreen"
+    },
+    "noticesCount": 1,
+    "lastNotice": {
+      "level": "info",
+      "message": "Opening governed workflow editor sandbox."
+    },
+    "launchedAppsCount": 1,
+    "lastLaunchedApp": {
+      "resourceUri": "ui://workflow-editor",
+      "mode": "fullscreen",
+      "title": "Workflow editor"
+    }
+  }
+}

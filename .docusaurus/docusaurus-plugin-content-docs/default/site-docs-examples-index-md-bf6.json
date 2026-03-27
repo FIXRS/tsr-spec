@@ -1,0 +1,27 @@
+{
+  "id": "examples/examples",
+  "title": "Examples",
+  "description": "Detailed TSR surface patterns, event flows, and patch-driven updates.",
+  "source": "@site/docs/examples/index.md",
+  "sourceDirName": "examples",
+  "slug": "/examples/",
+  "permalink": "/tsr-spec/examples/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "examples",
+    "title": "Examples",
+    "description": "Detailed TSR surface patterns, event flows, and patch-driven updates."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Conformance",
+    "permalink": "/tsr-spec/conformance/"
+  },
+  "next": {
+    "title": "Integration",
+    "permalink": "/tsr-spec/integration/"
+  }
+}

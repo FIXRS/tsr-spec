@@ -1,0 +1,27 @@
+{
+  "id": "actions/actions",
+  "title": "Actions",
+  "description": "User-triggerable capabilities on a TSR surface.",
+  "source": "@site/docs/actions/index.md",
+  "sourceDirName": "actions",
+  "slug": "/actions/",
+  "permalink": "/tsr-spec/actions/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "actions",
+    "title": "Actions",
+    "description": "User-triggerable capabilities on a TSR surface."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Views",
+    "permalink": "/tsr-spec/views/"
+  },
+  "next": {
+    "title": "Events",
+    "permalink": "/tsr-spec/events/"
+  }
+}

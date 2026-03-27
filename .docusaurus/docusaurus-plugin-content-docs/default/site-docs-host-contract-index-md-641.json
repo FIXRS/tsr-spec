@@ -1,0 +1,27 @@
+{
+  "id": "host-contract/host-contract",
+  "title": "Host Contract",
+  "description": "The out-of-band environment contract between the host, runtime, and generator.",
+  "source": "@site/docs/host-contract/index.md",
+  "sourceDirName": "host-contract",
+  "slug": "/host-contract/",
+  "permalink": "/tsr-spec/host-contract/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "host-contract",
+    "title": "Host Contract",
+    "description": "The out-of-band environment contract between the host, runtime, and generator."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Surface Model",
+    "permalink": "/tsr-spec/surface-model/"
+  },
+  "next": {
+    "title": "Entities",
+    "permalink": "/tsr-spec/entities/"
+  }
+}

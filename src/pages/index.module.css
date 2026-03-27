@@ -1,0 +1,70 @@
+.heroBanner {
+  background:
+    radial-gradient(circle at top left, var(--tsr-hero-grad-1), transparent 28rem),
+    radial-gradient(circle at bottom right, var(--tsr-hero-grad-2), transparent 24rem),
+    linear-gradient(180deg, var(--tsr-hero-surface-start) 0%, var(--tsr-hero-surface-end) 70%);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 52rem;
+  text-align: left;
+}
+
+.eyebrow {
+  color: var(--tsr-hero-accent-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  max-width: 12ch;
+}
+
+.heroSubtitle {
+  color: var(--tsr-hero-accent-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+  max-width: 40rem;
+}
+
+.heroBody {
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 44rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .heroContent {
+    text-align: left;
+  }
+
+  .heroTitle {
+    max-width: none;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}

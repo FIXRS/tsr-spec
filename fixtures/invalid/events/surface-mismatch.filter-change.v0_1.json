@@ -1,0 +1,19 @@
+{
+  "version": "tsr/0.1",
+  "event": {
+    "id": "evt_compare_filter_surface_mismatch_01",
+    "type": "collection.filter.changed",
+    "surfaceId": "surf_compare_options_99",
+    "viewId": "filters",
+    "actor": "user",
+    "timestamp": "2026-03-27T10:33:00Z",
+    "payload": {
+      "collectionId": "results",
+      "changes": {
+        "condition": [
+          "used"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "surfaces/schedule-book.v0_1.json",
+  "expectedValidity": "valid",
+  "expectedDiagnostics": [],
+  "expectedSurface": {
+    "id": "surf_schedule_book_01",
+    "revision": 2,
+    "kind": "inline",
+    "intent": "schedule_book",
+    "persistence": "ephemeral"
+  },
+  "requiredChecks": [
+    "document.version.supported",
+    "collections.selection_mode.valid",
+    "collections.items.resolve",
+    "views.bindings.resolve",
+    "actions.targets.resolve",
+    "actions.transact_confirmation.enforced",
+    "state.focused.resolve",
+    "state.selected.resolve",
+    "sources.references.resolve",
+    "accessibility.voice_summary.present"
+  ]
+}

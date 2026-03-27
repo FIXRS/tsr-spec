@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-conformance/conformance" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Conformance | Task Surface Runtime</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://fixrs.github.io/tsr-spec/conformance"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Conformance | Task Surface Runtime"><meta data-rh="true" name="description" content="What it means to conform to TSR and the immediate next increment to make the spec testable."><meta data-rh="true" property="og:description" content="What it means to conform to TSR and the immediate next increment to make the spec testable."><link data-rh="true" rel="canonical" href="https://fixrs.github.io/tsr-spec/conformance"><link data-rh="true" rel="alternate" href="https://fixrs.github.io/tsr-spec/conformance" hreflang="en"><link data-rh="true" rel="alternate" href="https://fixrs.github.io/tsr-spec/conformance" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Conformance","item":"https://fixrs.github.io/tsr-spec/conformance/"}]}</script><link rel="stylesheet" href="/tsr-spec/assets/css/styles.36fc52e2.css">
+<script src="/tsr-spec/assets/js/runtime~main.4fad885f.js" defer="defer"></script>
+<script src="/tsr-spec/assets/js/main.8a8248d3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/tsr-spec/"><b class="navbar__title text--truncate">Task Surface Runtime</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tsr-spec/">Specification</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/FIXRS/tsr-spec" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tsr-spec/"><span title="Task Surface Runtime (TSR)" class="linkLabel_WmDU">Task Surface Runtime (TSR)</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/introduction"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/core-concepts"><span title="Core Concepts" class="categoryLinkLabel_W154">Core Concepts</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/surface-model"><span title="Surface Model" class="categoryLinkLabel_W154">Surface Model</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/host-contract"><span title="Host Contract" class="categoryLinkLabel_W154">Host Contract</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/entities"><span title="Entities" class="categoryLinkLabel_W154">Entities</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/views"><span title="Views" class="categoryLinkLabel_W154">Views</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/actions"><span title="Actions" class="categoryLinkLabel_W154">Actions</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/events"><span title="Events" class="categoryLinkLabel_W154">Events</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/patches"><span title="Patches" class="categoryLinkLabel_W154">Patches</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/runtime-behavior"><span title="Runtime Behavior" class="categoryLinkLabel_W154">Runtime Behavior</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/security-model"><span title="Security Model" class="categoryLinkLabel_W154">Security Model</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tsr-spec/conformance"><span title="Conformance" class="categoryLinkLabel_W154">Conformance</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tsr-spec/conformance"><span title="Conformance" class="linkLabel_WmDU">Conformance</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/examples"><span title="Examples" class="categoryLinkLabel_W154">Examples</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/integration"><span title="Integration" class="categoryLinkLabel_W154">Integration</span></a></div></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/tsr-spec/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Conformance</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Conformance</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Conformance</h1></header>
+<p>TSR needs a conformance story, not just a vocabulary. Without one, different runtimes and generators will all claim support while meaning subtly different things.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-conformance-matters">Why conformance matters<a href="#why-conformance-matters" class="hash-link" aria-label="Direct link to Why conformance matters" title="Direct link to Why conformance matters" translate="no">​</a></h2>
+<p>Conformance is how TSR becomes:</p>
+<ul>
+<li class="">interoperable across hosts,</li>
+<li class="">testable across implementations,</li>
+<li class="">governable in high-trust environments,</li>
+<li class="">and evolvable without silent breakage.</li>
+</ul>
+<p>If the protocol cannot be tested, it is still only an idea.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conformance-targets">Conformance targets<a href="#conformance-targets" class="hash-link" aria-label="Direct link to Conformance targets" title="Direct link to Conformance targets" translate="no">​</a></h2>
+<p>TSR has multiple conforming roles. An implementation does not need to implement all of them, but it should say which ones it supports.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-surface-document-producer">1. Surface document producer<a href="#1-surface-document-producer" class="hash-link" aria-label="Direct link to 1. Surface document producer" title="Direct link to 1. Surface document producer" translate="no">​</a></h3>
+<p>A producer emits valid TSR surface documents.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">emit the declared TSR protocol version,</li>
+<li class="">produce structurally valid surfaces,</li>
+<li class="">keep ids and references resolvable,</li>
+<li class="">respect action and policy rules,</li>
+<li class="">and avoid inventing unsupported semantics without namespacing.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-patch-producer">2. Patch producer<a href="#2-patch-producer" class="hash-link" aria-label="Direct link to 2. Patch producer" title="Direct link to 2. Patch producer" translate="no">​</a></h3>
+<p>A patch producer emits valid semantic updates against mounted surfaces.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">reference the correct target surface,</li>
+<li class="">use valid patch operations,</li>
+<li class="">include revision information when sequencing matters,</li>
+<li class="">and avoid partial structural assumptions the runtime cannot validate.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-runtime">3. Runtime<a href="#3-runtime" class="hash-link" aria-label="Direct link to 3. Runtime" title="Direct link to 3. Runtime" translate="no">​</a></h3>
+<p>A runtime consumes surfaces, renders them, emits events, applies patches, and enforces policy.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">validate authored documents and patches,</li>
+<li class="">reject structurally invalid or policy-invalid input,</li>
+<li class="">preserve semantic meaning during rendering adaptation,</li>
+<li class="">emit standard event types with correct payloads,</li>
+<li class="">apply patches deterministically,</li>
+<li class="">and enforce capability, confirmation, and sandbox boundaries.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-host-adapter">4. Host adapter<a href="#4-host-adapter" class="hash-link" aria-label="Direct link to 4. Host adapter" title="Direct link to 4. Host adapter" translate="no">​</a></h3>
+<p>A host adapter provides trustworthy environment context and trusted capability mediation.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">expose a stable host contract,</li>
+<li class="">report capability availability honestly,</li>
+<li class="">enforce host-side capability gates,</li>
+<li class="">and not allow the generator to bypass runtime controls.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-validator-and-devtools">5. Validator and devtools<a href="#5-validator-and-devtools" class="hash-link" aria-label="Direct link to 5. Validator and devtools" title="Direct link to 5. Validator and devtools" translate="no">​</a></h3>
+<p>A validator or devtooling implementation supports conformance by checking authored documents, patches, and event traces.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">implement the published schema and cross-field rules it claims to support,</li>
+<li class="">report failures deterministically,</li>
+<li class="">and stay aligned with the protocol version it validates.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-sandbox-adapter">6. Sandbox adapter<a href="#6-sandbox-adapter" class="hash-link" aria-label="Direct link to 6. Sandbox adapter" title="Direct link to 6. Sandbox adapter" translate="no">​</a></h3>
+<p>A sandbox adapter launches richer micro-apps through the governed TSR escape hatch.</p>
+<p>To conform, it should:</p>
+<ul>
+<li class="">verify app resource identity,</li>
+<li class="">enforce declared capability limits,</li>
+<li class="">keep bridge communication bounded,</li>
+<li class="">and preserve surrounding TSR audit and lifecycle behavior.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="minimum-conformance-matrix">Minimum conformance matrix<a href="#minimum-conformance-matrix" class="hash-link" aria-label="Direct link to Minimum conformance matrix" title="Direct link to Minimum conformance matrix" translate="no">​</a></h2>
+<p>The minimum useful conformance floor for a TSR ecosystem is:</p>
+<ul>
+<li class="">one producer that emits valid surfaces,</li>
+<li class="">one runtime that validates and renders them,</li>
+<li class="">one validator that can catch structural and policy errors,</li>
+<li class="">and one fixture set that proves the first three agree.</li>
+</ul>
+<p>That is the smallest unit that turns the spec into an interoperable system.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="compatibility-rules">Compatibility rules<a href="#compatibility-rules" class="hash-link" aria-label="Direct link to Compatibility rules" title="Direct link to Compatibility rules" translate="no">​</a></h2>
+<p>Good conformance also requires clear compatibility behavior.</p>
+<p>Recommended rules:</p>
+<ul>
+<li class="">unsupported built-in semantics should fail explicitly, not silently degrade into different meaning,</li>
+<li class="">custom extensions should be namespaced,</li>
+<li class="">runtimes may omit unsupported advanced features, but should advertise that clearly,</li>
+<li class="">protocol version mismatches should be rejected or negotiated explicitly,</li>
+<li class="">revision mismatches should reject stale patches rather than guessing.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-a-runtime-may-vary">What a runtime may vary<a href="#what-a-runtime-may-vary" class="hash-link" aria-label="Direct link to What a runtime may vary" title="Direct link to What a runtime may vary" translate="no">​</a></h2>
+<p>Runtimes are allowed to differ in:</p>
+<ul>
+<li class="">visual design,</li>
+<li class="">component implementation,</li>
+<li class="">adaptive layout form,</li>
+<li class="">persistence backing store,</li>
+<li class="">transport details,</li>
+<li class="">observability tooling.</li>
+</ul>
+<p>Runtimes should not differ in:</p>
+<ul>
+<li class="">action class meaning,</li>
+<li class="">confirmation floors,</li>
+<li class="">capability mediation,</li>
+<li class="">event semantics,</li>
+<li class="">patch semantics,</li>
+<li class="">or sandbox trust boundaries.</li>
+</ul>
+<p>Those are protocol concerns, not product skinning choices.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference-fixture-corpus">Reference fixture corpus<a href="#reference-fixture-corpus" class="hash-link" aria-label="Direct link to Reference fixture corpus" title="Direct link to Reference fixture corpus" translate="no">​</a></h2>
+<p>The first concrete fixture corpus now lives in <code>tsr-spec/fixtures/</code>.</p>
+<p>That corpus is the first executable layer of the spec.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-the-fixture-corpus-should-include">What the fixture corpus should include<a href="#what-the-fixture-corpus-should-include" class="hash-link" aria-label="Direct link to What the fixture corpus should include" title="Direct link to What the fixture corpus should include" translate="no">​</a></h3>
+<p>At minimum:</p>
+<ul>
+<li class="">canonical surface documents for the core happy paths,</li>
+<li class="">canonical event traces for common interactions,</li>
+<li class="">canonical patch sequences for incremental updates,</li>
+<li class="">invalid events, documents, and patches for negative testing,</li>
+<li class="">expected validator outcomes,</li>
+<li class="">expected runtime state transitions where relevant.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-first-fixture-set-should-cover">The first fixture set should cover<a href="#the-first-fixture-set-should-cover" class="hash-link" aria-label="Direct link to The first fixture set should cover" title="Direct link to The first fixture set should cover" translate="no">​</a></h3>
+<ol>
+<li class="">option comparison</li>
+<li class="">review, approve, and send</li>
+<li class="">schedule and book</li>
+<li class="">promotion from ephemeral to artifact</li>
+<li class="">sandbox micro-app escalation</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-repo-layout">Current repo layout<a href="#current-repo-layout" class="hash-link" aria-label="Direct link to Current repo layout" title="Direct link to Current repo layout" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">fixtures/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  surfaces/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    schedule-book.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    promoted-artifact.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    sandbox-escalation.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  events/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.filter-change.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.send-requested.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  patches/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.append-results.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    promoted-artifact.refresh.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  patch-sequences/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.discovery-sequence.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.approve-sequence.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    sandbox-escalation.launch-sequence.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  invalid/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    events/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      surface-mismatch.filter-change.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      unknown-action-id.action-requested.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    surfaces/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      action-no-confirmation.transact.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      missing-zone-reference.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    patches/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      stale-patch-revision.v0_1.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  expectations/</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    schedule-book.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    promoted-artifact.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    sandbox-escalation.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.filter-change.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.send-requested.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.append-results.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    promoted-artifact.refresh.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    compare-options.discovery-sequence.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    review-send.approve-sequence.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    sandbox-escalation.launch-sequence.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    surface-mismatch.filter-change.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    unknown-action-id.action-requested.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    action-no-confirmation.transact.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    missing-zone-reference.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    stale-patch-revision.v0_1.expectation.json</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  manifest.v0_1.json</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-is-the-right-next-step">Why this is the right next step<a href="#why-this-is-the-right-next-step" class="hash-link" aria-label="Direct link to Why this is the right next step" title="Direct link to Why this is the right next step" translate="no">​</a></h3>
+<p>A fixture corpus forces the spec to answer questions prose can hide:</p>
+<ul>
+<li class="">what exact ids resolve where,</li>
+<li class="">what fields are required in practice,</li>
+<li class="">what event payloads actually look like,</li>
+<li class="">how revisions behave,</li>
+<li class="">which failures are rejected,</li>
+<li class="">and what a conforming validator or runtime must do.</li>
+</ul>
+<p>That makes the next round of work much more valuable than adding more broad narrative text.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="validator-harness">Validator harness<a href="#validator-harness" class="hash-link" aria-label="Direct link to Validator harness" title="Direct link to Validator harness" translate="no">​</a></h2>
+<p>The corpus now has a minimal executable validator harness:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">npm run validate:fixtures</span><br></span></code></pre></div></div>
+<p>That runner:</p>
+<ol>
+<li class="">reads <code>fixtures/manifest.v0_1.json</code>,</li>
+<li class="">loads each referenced fixture plus any context surface it needs,</li>
+<li class="">validates core structural, policy, and sequencing rules,</li>
+<li class="">applies runtime-state assertions for patch-like fixtures when expectations declare them,</li>
+<li class="">compares outcomes against the matching expectation file,</li>
+<li class="">reports deterministic pass or fail results.</li>
+</ol>
+<p>That is the first real conformance loop for TSR.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="immediate-next-increment">Immediate next increment<a href="#immediate-next-increment" class="hash-link" aria-label="Direct link to Immediate next increment" title="Direct link to Immediate next increment" translate="no">​</a></h2>
+<p>The immediate next step has now been completed in stronger form:</p>
+<ol>
+<li class="">canonical event fixtures exist,</li>
+<li class="">canonical patch fixtures exist,</li>
+<li class="">invalid event fixtures exist,</li>
+<li class="">multi-step patch sequence fixtures exist,</li>
+<li class="">patch and patch-sequence expectations assert final runtime state,</li>
+<li class="">invalid surfaces and invalid patches exist,</li>
+<li class="">expected diagnostics exist for those failure cases.</li>
+</ol>
+<p>That moves TSR beyond happy-path surface validation and into first-pass interoperability, behavioral validation, and failure-mode testing.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="after-the-next-corpus-expansion">After the next corpus expansion<a href="#after-the-next-corpus-expansion" class="hash-link" aria-label="Direct link to After the next corpus expansion" title="Direct link to After the next corpus expansion" translate="no">​</a></h2>
+<p>The natural increments after that are:</p>
+<ol>
+<li class="">publish a formal JSON Schema package,</li>
+<li class="">grow the validator into a reference validator package,</li>
+<li class="">add invalid patch sequences and richer trace-style event sets,</li>
+<li class="">cover more patch ops such as view mutation and action replacement,</li>
+<li class="">publish a minimal reference runtime,</li>
+<li class="">add interoperability tests against the shared fixtures.</li>
+</ol>
+<p>That sequence turns TSR from a good draft into a real standard candidate.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/tsr-spec/security-model"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Security Model</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tsr-spec/examples"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Examples</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#why-conformance-matters" class="table-of-contents__link toc-highlight">Why conformance matters</a></li><li><a href="#conformance-targets" class="table-of-contents__link toc-highlight">Conformance targets</a><ul><li><a href="#1-surface-document-producer" class="table-of-contents__link toc-highlight">1. Surface document producer</a></li><li><a href="#2-patch-producer" class="table-of-contents__link toc-highlight">2. Patch producer</a></li><li><a href="#3-runtime" class="table-of-contents__link toc-highlight">3. Runtime</a></li><li><a href="#4-host-adapter" class="table-of-contents__link toc-highlight">4. Host adapter</a></li><li><a href="#5-validator-and-devtools" class="table-of-contents__link toc-highlight">5. Validator and devtools</a></li><li><a href="#6-sandbox-adapter" class="table-of-contents__link toc-highlight">6. Sandbox adapter</a></li></ul></li><li><a href="#minimum-conformance-matrix" class="table-of-contents__link toc-highlight">Minimum conformance matrix</a></li><li><a href="#compatibility-rules" class="table-of-contents__link toc-highlight">Compatibility rules</a></li><li><a href="#what-a-runtime-may-vary" class="table-of-contents__link toc-highlight">What a runtime may vary</a></li><li><a href="#reference-fixture-corpus" class="table-of-contents__link toc-highlight">Reference fixture corpus</a><ul><li><a href="#what-the-fixture-corpus-should-include" class="table-of-contents__link toc-highlight">What the fixture corpus should include</a></li><li><a href="#the-first-fixture-set-should-cover" class="table-of-contents__link toc-highlight">The first fixture set should cover</a></li><li><a href="#current-repo-layout" class="table-of-contents__link toc-highlight">Current repo layout</a></li><li><a href="#why-this-is-the-right-next-step" class="table-of-contents__link toc-highlight">Why this is the right next step</a></li></ul></li><li><a href="#validator-harness" class="table-of-contents__link toc-highlight">Validator harness</a></li><li><a href="#immediate-next-increment" class="table-of-contents__link toc-highlight">Immediate next increment</a></li><li><a href="#after-the-next-corpus-expansion" class="table-of-contents__link toc-highlight">After the next corpus expansion</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

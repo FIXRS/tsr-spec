@@ -1,0 +1,25 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "surfaces/review-send.v0_1.json",
+  "expectedValidity": "valid",
+  "expectedDiagnostics": [],
+  "expectedSurface": {
+    "id": "surf_review_send_01",
+    "revision": 3,
+    "kind": "panel",
+    "intent": "review_approve",
+    "persistence": "ephemeral"
+  },
+  "requiredChecks": [
+    "document.version.supported",
+    "surface.id.present",
+    "layout.zones.resolve",
+    "views.bindings.resolve",
+    "actions.targets.resolve",
+    "actions.communicate_confirmation.enforced",
+    "sources.references.resolve",
+    "state.focused.resolve",
+    "policy.class_policies.valid",
+    "accessibility.voice_summary.present"
+  ]
+}

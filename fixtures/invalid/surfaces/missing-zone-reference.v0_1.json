@@ -1,0 +1,78 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_invalid_missing_zone_01",
+    "revision": 1,
+    "kind": "panel",
+    "intent": "inspect_item",
+    "title": "Invalid missing zone reference example",
+    "summary": "Surface intentionally references an undefined layout zone.",
+    "layout": {
+      "template": "split",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "doc_01",
+        "type": "Document",
+        "title": "Planning memo",
+        "fields": {
+          "author": { "value": "Avery", "sourceRef": "src_doc_1" }
+        },
+        "status": "available"
+      }
+    ],
+    "collections": [],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "sidebar",
+        "sourceEntity": "doc_01",
+        "props": {
+          "text": "This view points at an undefined zone."
+        }
+      }
+    ],
+    "actions": [],
+    "state": {
+      "selected": [],
+      "focused": "doc_01",
+      "filters": {},
+      "sort": {},
+      "drafts": {},
+      "ui": {},
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [],
+      "allowExternalNavigation": false,
+      "allowedCapabilities": [],
+      "redactInVoice": [],
+      "sourceBadgeRules": {},
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_doc_1",
+        "kind": "user_input",
+        "label": "Uploaded document"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Invalid surface used to test missing layout zone references.",
+      "preferredFocus": "summary",
+      "landmarks": ["header", "main", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": false
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "fixtureSetVersion": "tsr-fixtures/0.1",
+  "protocolVersion": "tsr/0.1",
+  "fixtures": [
+    {
+      "id": "compare-options",
+      "kind": "surface",
+      "fixture": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/compare-options.v0_1.expectation.json",
+      "category": "happy-path",
+      "intent": "compare_options"
+    },
+    {
+      "id": "review-send",
+      "kind": "surface",
+      "fixture": "surfaces/review-send.v0_1.json",
+      "expectation": "expectations/review-send.v0_1.expectation.json",
+      "category": "happy-path",
+      "intent": "review_approve"
+    },
+    {
+      "id": "schedule-book",
+      "kind": "surface",
+      "fixture": "surfaces/schedule-book.v0_1.json",
+      "expectation": "expectations/schedule-book.v0_1.expectation.json",
+      "category": "happy-path",
+      "intent": "schedule_book"
+    },
+    {
+      "id": "promoted-artifact",
+      "kind": "surface",
+      "fixture": "surfaces/promoted-artifact.v0_1.json",
+      "expectation": "expectations/promoted-artifact.v0_1.expectation.json",
+      "category": "happy-path",
+      "intent": "explore_data"
+    },
+    {
+      "id": "sandbox-escalation",
+      "kind": "surface",
+      "fixture": "surfaces/sandbox-escalation.v0_1.json",
+      "expectation": "expectations/sandbox-escalation.v0_1.expectation.json",
+      "category": "happy-path",
+      "intent": "create_edit"
+    },
+    {
+      "id": "compare-options.filter-change",
+      "kind": "event",
+      "fixture": "events/compare-options.filter-change.v0_1.json",
+      "contextSurface": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/compare-options.filter-change.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "review-send.send-requested",
+      "kind": "event",
+      "fixture": "events/review-send.send-requested.v0_1.json",
+      "contextSurface": "surfaces/review-send.v0_1.json",
+      "expectation": "expectations/review-send.send-requested.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "compare-options.append-results",
+      "kind": "patch",
+      "fixture": "patches/compare-options.append-results.v0_1.json",
+      "contextSurface": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/compare-options.append-results.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "promoted-artifact.refresh",
+      "kind": "patch",
+      "fixture": "patches/promoted-artifact.refresh.v0_1.json",
+      "contextSurface": "surfaces/promoted-artifact.v0_1.json",
+      "expectation": "expectations/promoted-artifact.refresh.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "compare-options.discovery-sequence",
+      "kind": "patch-sequence",
+      "fixture": "patch-sequences/compare-options.discovery-sequence.v0_1.json",
+      "contextSurface": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/compare-options.discovery-sequence.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "review-send.approve-sequence",
+      "kind": "patch-sequence",
+      "fixture": "patch-sequences/review-send.approve-sequence.v0_1.json",
+      "contextSurface": "surfaces/review-send.v0_1.json",
+      "expectation": "expectations/review-send.approve-sequence.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "sandbox-escalation.launch-sequence",
+      "kind": "patch-sequence",
+      "fixture": "patch-sequences/sandbox-escalation.launch-sequence.v0_1.json",
+      "contextSurface": "surfaces/sandbox-escalation.v0_1.json",
+      "expectation": "expectations/sandbox-escalation.launch-sequence.v0_1.expectation.json",
+      "category": "happy-path"
+    },
+    {
+      "id": "invalid.unknown-action-id.action-requested",
+      "kind": "event",
+      "fixture": "invalid/events/unknown-action-id.action-requested.v0_1.json",
+      "contextSurface": "surfaces/review-send.v0_1.json",
+      "expectation": "expectations/unknown-action-id.action-requested.v0_1.expectation.json",
+      "category": "invalid"
+    },
+    {
+      "id": "invalid.surface-mismatch.filter-change",
+      "kind": "event",
+      "fixture": "invalid/events/surface-mismatch.filter-change.v0_1.json",
+      "contextSurface": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/surface-mismatch.filter-change.v0_1.expectation.json",
+      "category": "invalid"
+    },
+    {
+      "id": "invalid.action-no-confirmation.transact",
+      "kind": "surface",
+      "fixture": "invalid/surfaces/action-no-confirmation.transact.v0_1.json",
+      "expectation": "expectations/action-no-confirmation.transact.v0_1.expectation.json",
+      "category": "invalid"
+    },
+    {
+      "id": "invalid.missing-zone-reference",
+      "kind": "surface",
+      "fixture": "invalid/surfaces/missing-zone-reference.v0_1.json",
+      "expectation": "expectations/missing-zone-reference.v0_1.expectation.json",
+      "category": "invalid"
+    },
+    {
+      "id": "invalid.stale-patch-revision",
+      "kind": "patch",
+      "fixture": "invalid/patches/stale-patch-revision.v0_1.json",
+      "contextSurface": "surfaces/compare-options.v0_1.json",
+      "expectation": "expectations/stale-patch-revision.v0_1.expectation.json",
+      "category": "invalid"
+    }
+  ]
+}

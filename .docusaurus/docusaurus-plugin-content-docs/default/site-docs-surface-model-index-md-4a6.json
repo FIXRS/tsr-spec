@@ -1,0 +1,27 @@
+{
+  "id": "surface-model/surface-model",
+  "title": "Surface Model",
+  "description": "The canonical top-level document shape for TSR surfaces.",
+  "source": "@site/docs/surface-model/index.md",
+  "sourceDirName": "surface-model",
+  "slug": "/surface-model/",
+  "permalink": "/tsr-spec/surface-model/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "surface-model",
+    "title": "Surface Model",
+    "description": "The canonical top-level document shape for TSR surfaces."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Core Concepts",
+    "permalink": "/tsr-spec/core-concepts/"
+  },
+  "next": {
+    "title": "Host Contract",
+    "permalink": "/tsr-spec/host-contract/"
+  }
+}

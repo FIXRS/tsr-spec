@@ -1,0 +1,21 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "patch-sequences/review-send.approve-sequence.v0_1.json",
+  "fixtureKind": "patch-sequence",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [],
+  "expectedRuntimeState": {
+    "revision": 5,
+    "statePaths": {
+      "ui.approved": true,
+      "ui.readyToSend": true
+    },
+    "noticesCount": 2,
+    "noticeMessagesExact": [
+      "Draft approved for send.",
+      "Ready to send after review checks."
+    ]
+  }
+}

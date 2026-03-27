@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-core-concepts/core-concepts" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Core Concepts | Task Surface Runtime</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://fixrs.github.io/tsr-spec/core-concepts"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Core Concepts | Task Surface Runtime"><meta data-rh="true" name="description" content="The stable conceptual vocabulary behind TSR."><meta data-rh="true" property="og:description" content="The stable conceptual vocabulary behind TSR."><link data-rh="true" rel="canonical" href="https://fixrs.github.io/tsr-spec/core-concepts"><link data-rh="true" rel="alternate" href="https://fixrs.github.io/tsr-spec/core-concepts" hreflang="en"><link data-rh="true" rel="alternate" href="https://fixrs.github.io/tsr-spec/core-concepts" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Core Concepts","item":"https://fixrs.github.io/tsr-spec/core-concepts/"}]}</script><link rel="stylesheet" href="/tsr-spec/assets/css/styles.36fc52e2.css">
+<script src="/tsr-spec/assets/js/runtime~main.4fad885f.js" defer="defer"></script>
+<script src="/tsr-spec/assets/js/main.8a8248d3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/tsr-spec/"><b class="navbar__title text--truncate">Task Surface Runtime</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tsr-spec/">Specification</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/FIXRS/tsr-spec" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tsr-spec/"><span title="Task Surface Runtime (TSR)" class="linkLabel_WmDU">Task Surface Runtime (TSR)</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/introduction"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tsr-spec/core-concepts"><span title="Core Concepts" class="categoryLinkLabel_W154">Core Concepts</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tsr-spec/core-concepts"><span title="Core Concepts" class="linkLabel_WmDU">Core Concepts</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/surface-model"><span title="Surface Model" class="categoryLinkLabel_W154">Surface Model</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/host-contract"><span title="Host Contract" class="categoryLinkLabel_W154">Host Contract</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/entities"><span title="Entities" class="categoryLinkLabel_W154">Entities</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/views"><span title="Views" class="categoryLinkLabel_W154">Views</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/actions"><span title="Actions" class="categoryLinkLabel_W154">Actions</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/events"><span title="Events" class="categoryLinkLabel_W154">Events</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/patches"><span title="Patches" class="categoryLinkLabel_W154">Patches</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/runtime-behavior"><span title="Runtime Behavior" class="categoryLinkLabel_W154">Runtime Behavior</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/security-model"><span title="Security Model" class="categoryLinkLabel_W154">Security Model</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/conformance"><span title="Conformance" class="categoryLinkLabel_W154">Conformance</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/examples"><span title="Examples" class="categoryLinkLabel_W154">Examples</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tsr-spec/integration"><span title="Integration" class="categoryLinkLabel_W154">Integration</span></a></div></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/tsr-spec/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Core Concepts</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Core Concepts</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Core Concepts</h1></header>
+<p>TSR should keep a small conceptual core even as implementations evolve. The names below are not documentation decoration; they define the boundary between the generator, runtime, host, and tool layers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="concept-glossary">Concept glossary<a href="#concept-glossary" class="hash-link" aria-label="Direct link to Concept glossary" title="Direct link to Concept glossary" translate="no">​</a></h2>
+<table><thead><tr><th>Concept</th><th>Meaning</th><th>Primary owner</th></tr></thead><tbody><tr><td>Surface</td><td>The full task-specific interface instance currently mounted for the user.</td><td>Generator creates it, runtime mounts it</td></tr><tr><td>Entity</td><td>A typed thing the user is inspecting, comparing, editing, or acting on.</td><td>Generator or normalizer</td></tr><tr><td>Collection</td><td>An ordered or grouped set of entities with interaction rules.</td><td>Generator or normalizer</td></tr><tr><td>View</td><td>A renderable presentation primitive bound to entities, collections, or state.</td><td>Generator chooses it, runtime renders it</td></tr><tr><td>Action</td><td>A typed, policy-aware capability the user can trigger.</td><td>Generator declares it, runtime governs it</td></tr><tr><td>State</td><td>The current interaction context for the mounted surface.</td><td>Shared, with runtime-owned local portions</td></tr><tr><td>Event</td><td>A semantic record of something meaningful that happened on or around the surface.</td><td>Runtime emits it</td></tr><tr><td>Patch</td><td>A semantic update that changes an existing surface.</td><td>Generator or host emits it</td></tr><tr><td>Runtime</td><td>The system that validates, renders, updates, and governs surfaces.</td><td>Runtime implementation</td></tr><tr><td>Generator</td><td>The system that decides what surface should exist and how it should evolve.</td><td>Assistant or compiler</td></tr><tr><td>Host</td><td>The shell or application in which the runtime operates.</td><td>Host implementation</td></tr><tr><td>Sandbox app</td><td>A richer custom interface launched when the built-in grammar is not enough.</td><td>Runtime + sandbox adapter</td></tr><tr><td>Provenance</td><td>Metadata about where user-visible information came from.</td><td>Generator, normalizer, runtime</td></tr><tr><td>Lifecycle</td><td>The creation, use, update, promotion, persistence, and closure of a surface.</td><td>Shared</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="surface">Surface<a href="#surface" class="hash-link" aria-label="Direct link to Surface" title="Direct link to Surface" translate="no">​</a></h2>
+<p>A surface is the top-level TSR object. It represents one active task environment for one user in one context.</p>
+<p>A surface is not usually:</p>
+<ul>
+<li class="">a permanent application,</li>
+<li class="">a free-form component tree,</li>
+<li class="">or a raw transport envelope.</li>
+</ul>
+<p>A surface is usually:</p>
+<ul>
+<li class="">scoped to one task or task cluster,</li>
+<li class="">incrementally updateable,</li>
+<li class="">explicit about what the user can do next,</li>
+<li class="">and able to preserve context across interaction.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="entity">Entity<a href="#entity" class="hash-link" aria-label="Direct link to Entity" title="Direct link to Entity" translate="no">​</a></h2>
+<p>An entity is a typed object shown on the surface. Examples include a listing, document, profile, message draft, calendar slot, task, or metric series.</p>
+<p>Entities should carry enough structure for the runtime to support:</p>
+<ul>
+<li class="">inspection,</li>
+<li class="">comparison,</li>
+<li class="">sorting and filtering,</li>
+<li class="">action targeting,</li>
+<li class="">provenance display,</li>
+<li class="">and accessibility summaries.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="collection">Collection<a href="#collection" class="hash-link" aria-label="Direct link to Collection" title="Direct link to Collection" translate="no">​</a></h2>
+<p>A collection is more than an array. It carries the behavior around a set of entities:</p>
+<ul>
+<li class="">ordering,</li>
+<li class="">grouping,</li>
+<li class="">filter state,</li>
+<li class="">pagination,</li>
+<li class="">selection rules,</li>
+<li class="">compare limits,</li>
+<li class="">and ranking or scoring hints.</li>
+</ul>
+<p>Collections are central to browsing, triage, search, and compare workflows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="view">View<a href="#view" class="hash-link" aria-label="Direct link to View" title="Direct link to View" translate="no">​</a></h2>
+<p>A view is a semantic presentation primitive such as a list, grid, compare matrix, form, chart, calendar, detail pane, or approval panel.</p>
+<p>The view says what structure is needed. The runtime decides the host-specific rendering details.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="action">Action<a href="#action" class="hash-link" aria-label="Direct link to Action" title="Direct link to Action" translate="no">​</a></h2>
+<p>An action is a user-triggerable capability. TSR actions are typed and policy-aware, not arbitrary callbacks.</p>
+<p>An action should describe:</p>
+<ul>
+<li class="">what class of operation it is,</li>
+<li class="">what it targets,</li>
+<li class="">how it invokes work,</li>
+<li class="">what confirmation it needs,</li>
+<li class="">what capabilities it requires,</li>
+<li class="">and whether it is reversible or auditable.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="state">State<a href="#state" class="hash-link" aria-label="Direct link to State" title="Direct link to State" translate="no">​</a></h2>
+<p>State is the current interaction context for the mounted surface. It includes things such as:</p>
+<ul>
+<li class="">focused entity,</li>
+<li class="">selected entities,</li>
+<li class="">active filters and sort,</li>
+<li class="">local drafts,</li>
+<li class="">pending confirmations,</li>
+<li class="">pending operations,</li>
+<li class="">and non-destructive UI mode.</li>
+</ul>
+<p>TSR should clearly distinguish between:</p>
+<ul>
+<li class="">runtime-owned local state,</li>
+<li class="">generator-owned structural state,</li>
+<li class="">and external system state.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="event">Event<a href="#event" class="hash-link" aria-label="Direct link to Event" title="Direct link to Event" translate="no">​</a></h2>
+<p>An event is a semantic record of something meaningful that happened. Good TSR events describe intent and outcome rather than low-level input mechanics.</p>
+<p>For example, TSR should care about:</p>
+<ul>
+<li class=""><code>entity.selected</code>,</li>
+<li class=""><code>collection.filter.changed</code>,</li>
+<li class=""><code>action.requested</code>,</li>
+<li class=""><code>form.submitted</code>,</li>
+<li class=""><code>surface.closed</code>.</li>
+</ul>
+<p>It should not expose raw DOM noise as the primary assistant-facing protocol.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="patch">Patch<a href="#patch" class="hash-link" aria-label="Direct link to Patch" title="Direct link to Patch" translate="no">​</a></h2>
+<p>A patch is an incremental update applied to a mounted surface. It lets the assistant or host say:</p>
+<ul>
+<li class="">append new results,</li>
+<li class="">update one entity,</li>
+<li class="">replace one view,</li>
+<li class="">show a warning,</li>
+<li class="">change surface mode,</li>
+<li class="">or close the surface.</li>
+</ul>
+<p>Patches make the surface durable across interaction instead of disposable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="runtime">Runtime<a href="#runtime" class="hash-link" aria-label="Direct link to Runtime" title="Direct link to Runtime" translate="no">​</a></h2>
+<p>The runtime is the system that turns a surface document into a usable interface. It is responsible for:</p>
+<ul>
+<li class="">validation,</li>
+<li class="">rendering,</li>
+<li class="">local state management,</li>
+<li class="">event emission,</li>
+<li class="">patch application,</li>
+<li class="">policy enforcement,</li>
+<li class="">host adaptation,</li>
+<li class="">and sandbox launches when necessary.</li>
+</ul>
+<p>The runtime is not the same thing as the generator.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="generator">Generator<a href="#generator" class="hash-link" aria-label="Direct link to Generator" title="Direct link to Generator" translate="no">​</a></h2>
+<p>The generator decides what surface should exist and how it should evolve. It may be:</p>
+<ul>
+<li class="">model-driven,</li>
+<li class="">rules-driven,</li>
+<li class="">template-driven,</li>
+<li class="">or hybrid.</li>
+</ul>
+<p>Its job is to emit valid TSR surfaces and patches, not to directly render pixels.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="host">Host<a href="#host" class="hash-link" aria-label="Direct link to Host" title="Direct link to Host" translate="no">​</a></h2>
+<p>The host is the environment in which the runtime runs. Examples include a desktop assistant shell, a web app, a mobile shell, or another agent host.</p>
+<p>The host provides context such as:</p>
+<ul>
+<li class="">viewport and display mode,</li>
+<li class="">theme and locale,</li>
+<li class="">input modes,</li>
+<li class="">safe area,</li>
+<li class="">navigation behavior,</li>
+<li class="">and available capabilities.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sandbox-app">Sandbox app<a href="#sandbox-app" class="hash-link" aria-label="Direct link to Sandbox app" title="Direct link to Sandbox app" translate="no">​</a></h2>
+<p>A sandbox app is the escape hatch for tasks that exceed the native TSR grammar. It should be:</p>
+<ul>
+<li class="">explicit,</li>
+<li class="">capability-bounded,</li>
+<li class="">isolated from unrestricted host state,</li>
+<li class="">and launched through a governed runtime boundary.</li>
+</ul>
+<p>TSR should prefer native primitives before using this lane.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="provenance">Provenance<a href="#provenance" class="hash-link" aria-label="Direct link to Provenance" title="Direct link to Provenance" translate="no">​</a></h2>
+<p>Provenance explains where data came from. TSR should preserve distinctions among:</p>
+<ul>
+<li class="">user input,</li>
+<li class="">tool output,</li>
+<li class="">retrieved content,</li>
+<li class="">partner-provided data,</li>
+<li class="">model inference,</li>
+<li class="">and host or system metadata.</li>
+</ul>
+<p>This matters for trust, ranking explanation, action safety, and auditability.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle">Lifecycle<a href="#lifecycle" class="hash-link" aria-label="Direct link to Lifecycle" title="Direct link to Lifecycle" translate="no">​</a></h2>
+<p>A surface moves through a lifecycle:</p>
+<ol>
+<li class="">generation,</li>
+<li class="">validation,</li>
+<li class="">mounting,</li>
+<li class="">interaction,</li>
+<li class="">patch-driven updates,</li>
+<li class="">optional persistence or promotion,</li>
+<li class="">closure or rehydration.</li>
+</ol>
+<p>Lifecycle is not implementation noise. It is part of the contract between the generator, runtime, and host.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ownership-boundaries">Ownership boundaries<a href="#ownership-boundaries" class="hash-link" aria-label="Direct link to Ownership boundaries" title="Direct link to Ownership boundaries" translate="no">​</a></h2>
+<p>TSR works best when ownership is explicit:</p>
+<ul>
+<li class="">The generator owns intent, structure, view selection, and action declarations.</li>
+<li class="">The runtime owns local interaction handling, deterministic state transitions, and policy enforcement.</li>
+<li class="">The host owns capabilities, navigation, windowing, and trusted system integration.</li>
+<li class="">Tools own side effects and fresh external data.</li>
+</ul>
+<p>Confusion here leads directly to race conditions and unsafe behavior.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="relationship-among-concepts">Relationship among concepts<a href="#relationship-among-concepts" class="hash-link" aria-label="Direct link to Relationship among concepts" title="Direct link to Relationship among concepts" translate="no">​</a></h2>
+<p>The steady-state TSR loop is:</p>
+<ol>
+<li class="">raw inputs are normalized into entities and collections,</li>
+<li class="">the generator emits a surface,</li>
+<li class="">the runtime validates and mounts it,</li>
+<li class="">the runtime renders views and governs actions,</li>
+<li class="">the user interacts,</li>
+<li class="">the runtime emits semantic events,</li>
+<li class="">the generator or host returns patches,</li>
+<li class="">the surface updates without losing continuity.</li>
+</ol>
+<p>That loop is the heart of TSR.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/tsr-spec/introduction"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Introduction</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tsr-spec/surface-model"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Surface Model</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#concept-glossary" class="table-of-contents__link toc-highlight">Concept glossary</a></li><li><a href="#surface" class="table-of-contents__link toc-highlight">Surface</a></li><li><a href="#entity" class="table-of-contents__link toc-highlight">Entity</a></li><li><a href="#collection" class="table-of-contents__link toc-highlight">Collection</a></li><li><a href="#view" class="table-of-contents__link toc-highlight">View</a></li><li><a href="#action" class="table-of-contents__link toc-highlight">Action</a></li><li><a href="#state" class="table-of-contents__link toc-highlight">State</a></li><li><a href="#event" class="table-of-contents__link toc-highlight">Event</a></li><li><a href="#patch" class="table-of-contents__link toc-highlight">Patch</a></li><li><a href="#runtime" class="table-of-contents__link toc-highlight">Runtime</a></li><li><a href="#generator" class="table-of-contents__link toc-highlight">Generator</a></li><li><a href="#host" class="table-of-contents__link toc-highlight">Host</a></li><li><a href="#sandbox-app" class="table-of-contents__link toc-highlight">Sandbox app</a></li><li><a href="#provenance" class="table-of-contents__link toc-highlight">Provenance</a></li><li><a href="#lifecycle" class="table-of-contents__link toc-highlight">Lifecycle</a></li><li><a href="#ownership-boundaries" class="table-of-contents__link toc-highlight">Ownership boundaries</a></li><li><a href="#relationship-among-concepts" class="table-of-contents__link toc-highlight">Relationship among concepts</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

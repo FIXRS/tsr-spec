@@ -1,0 +1,33 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "patches/compare-options.append-results.v0_1.json",
+  "fixtureKind": "patch",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [],
+  "expectedRuntimeState": {
+    "revision": 2,
+    "entityIdsContains": [
+      "listing_04",
+      "listing_05"
+    ],
+    "collectionLengths": {
+      "results": 5
+    },
+    "collectionItemsExact": {
+      "results": [
+        "listing_01",
+        "listing_02",
+        "listing_03",
+        "listing_04",
+        "listing_05"
+      ]
+    },
+    "noticesCount": 1,
+    "lastNotice": {
+      "level": "info",
+      "message": "Found 2 additional listings."
+    }
+  }
+}

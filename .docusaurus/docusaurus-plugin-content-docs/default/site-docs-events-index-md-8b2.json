@@ -1,0 +1,27 @@
+{
+  "id": "events/events",
+  "title": "Events",
+  "description": "Semantic interaction events in TSR.",
+  "source": "@site/docs/events/index.md",
+  "sourceDirName": "events",
+  "slug": "/events/",
+  "permalink": "/tsr-spec/events/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "events",
+    "title": "Events",
+    "description": "Semantic interaction events in TSR."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Actions",
+    "permalink": "/tsr-spec/actions/"
+  },
+  "next": {
+    "title": "Patches",
+    "permalink": "/tsr-spec/patches/"
+  }
+}

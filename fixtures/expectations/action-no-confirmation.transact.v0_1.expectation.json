@@ -1,0 +1,13 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "invalid/surfaces/action-no-confirmation.transact.v0_1.json",
+  "fixtureKind": "surface",
+  "expectedValidity": "invalid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [
+    "actions.high_risk_confirmation.enforced"
+  ],
+  "requiredChecks": [
+    "actions.high_risk_confirmation.enforced"
+  ]
+}

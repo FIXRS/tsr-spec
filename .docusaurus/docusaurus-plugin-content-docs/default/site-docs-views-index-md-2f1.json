@@ -1,0 +1,27 @@
+{
+  "id": "views/views",
+  "title": "Views",
+  "description": "Built-in presentation primitives for TSR surfaces.",
+  "source": "@site/docs/views/index.md",
+  "sourceDirName": "views",
+  "slug": "/views/",
+  "permalink": "/tsr-spec/views/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "views",
+    "title": "Views",
+    "description": "Built-in presentation primitives for TSR surfaces."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Entities",
+    "permalink": "/tsr-spec/entities/"
+  },
+  "next": {
+    "title": "Actions",
+    "permalink": "/tsr-spec/actions/"
+  }
+}

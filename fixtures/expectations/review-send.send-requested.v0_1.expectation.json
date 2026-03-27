@@ -1,0 +1,11 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "events/review-send.send-requested.v0_1.json",
+  "fixtureKind": "event",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [
+    "event.view_id.resolve_when_present"
+  ]
+}

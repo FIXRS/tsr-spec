@@ -1,0 +1,27 @@
+{
+  "id": "core-concepts/core-concepts",
+  "title": "Core Concepts",
+  "description": "The stable conceptual vocabulary behind TSR.",
+  "source": "@site/docs/core-concepts/index.md",
+  "sourceDirName": "core-concepts",
+  "slug": "/core-concepts/",
+  "permalink": "/tsr-spec/core-concepts/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "core-concepts",
+    "title": "Core Concepts",
+    "description": "The stable conceptual vocabulary behind TSR."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/tsr-spec/introduction/"
+  },
+  "next": {
+    "title": "Surface Model",
+    "permalink": "/tsr-spec/surface-model/"
+  }
+}

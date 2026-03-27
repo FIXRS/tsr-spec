@@ -1,0 +1,17 @@
+{
+  "version": "tsr/0.1",
+  "event": {
+    "id": "evt_review_send_unknown_action_01",
+    "type": "action.requested",
+    "surfaceId": "surf_review_send_01",
+    "viewId": "actions",
+    "actor": "user",
+    "timestamp": "2026-03-27T10:32:00Z",
+    "payload": {
+      "actionId": "archive",
+      "params": {
+        "entityRef": "draft_01"
+      }
+    }
+  }
+}

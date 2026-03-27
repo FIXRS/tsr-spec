@@ -1,0 +1,43 @@
+{
+  "version": "tsr/0.1",
+  "patchSequence": {
+    "sequenceId": "seq_review_send_approve_01",
+    "surfaceId": "surf_review_send_01",
+    "patches": [
+      {
+        "patchId": "patch_review_approve_01",
+        "baseRevision": 3,
+        "reason": "assistant",
+        "ops": [
+          {
+            "op": "state.set",
+            "path": "state.ui.approved",
+            "value": true
+          },
+          {
+            "op": "notice.show",
+            "level": "success",
+            "message": "Draft approved for send."
+          }
+        ]
+      },
+      {
+        "patchId": "patch_review_ready_02",
+        "baseRevision": 4,
+        "reason": "assistant",
+        "ops": [
+          {
+            "op": "state.set",
+            "path": "state.ui.readyToSend",
+            "value": true
+          },
+          {
+            "op": "notice.show",
+            "level": "info",
+            "message": "Ready to send after review checks."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_review_send_01",
+    "revision": 3,
+    "kind": "panel",
+    "intent": "review_approve",
+    "title": "Review customer follow-up draft",
+    "summary": "Check the draft, review edits, and send only after approval.",
+    "layout": {
+      "template": "split",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "aside", "role": "aside" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "draft_01",
+        "type": "MessageDraft",
+        "title": "Customer follow-up draft",
+        "summary": "Clarifies shipment timing and offers a direct reply path.",
+        "fields": {
+          "subject": { "value": "Quick update on your order", "sourceRef": "src_assistant_draft" },
+          "recipient": { "value": "customer@example.org", "sourceRef": "src_thread_context" },
+          "body": {
+            "value": "Hi Maya,\n\nYour order is packed and scheduled to ship tomorrow. I will send the tracking number as soon as it is available.\n\nBest,\nJordan",
+            "sourceRef": "src_assistant_draft"
+          }
+        },
+        "status": "draft"
+      }
+    ],
+    "collections": [],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "1 draft ready for review before send."
+        }
+      },
+      {
+        "id": "draft_diff",
+        "type": "diff",
+        "zone": "main",
+        "sourceEntity": "draft_01",
+        "props": {
+          "beforeLabel": "Previous draft",
+          "afterLabel": "Current draft"
+        },
+        "actions": ["edit", "approve"]
+      },
+      {
+        "id": "composer",
+        "type": "composer",
+        "zone": "main",
+        "sourceEntity": "draft_01",
+        "props": {
+          "field": "body",
+          "placeholder": "Edit message body"
+        },
+        "actions": ["edit", "send"]
+      },
+      {
+        "id": "approval",
+        "type": "approvalPanel",
+        "zone": "aside",
+        "sourceEntity": "draft_01",
+        "props": {
+          "approvalLabel": "Approved for send"
+        },
+        "actions": ["approve", "send"]
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["edit", "approve", "send"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "edit",
+        "label": "Edit draft",
+        "actionClass": "view",
+        "target": "surface",
+        "confirmation": "none",
+        "invoke": {
+          "kind": "local",
+          "ref": "composer.focus"
+        },
+        "style": "secondary",
+        "reversible": true
+      },
+      {
+        "id": "approve",
+        "label": "Approve draft",
+        "actionClass": "mutate",
+        "target": "entity:draft_01",
+        "confirmation": "soft",
+        "invoke": {
+          "kind": "assistant",
+          "ref": "draft.approve"
+        },
+        "style": "secondary",
+        "reversible": true
+      },
+      {
+        "id": "send",
+        "label": "Send message",
+        "actionClass": "communicate",
+        "target": "entity:draft_01",
+        "confirmation": "hard",
+        "invoke": {
+          "kind": "tool",
+          "ref": "message.send",
+          "params": {
+            "entityRef": "draft_01"
+          }
+        },
+        "style": "primary",
+        "reversible": false
+      }
+    ],
+    "state": {
+      "selected": [],
+      "focused": "draft_01",
+      "filters": {},
+      "sort": {},
+      "drafts": {
+        "draft_01.body": "Hi Maya,\n\nYour order is packed and scheduled to ship tomorrow. I will send the tracking number as soon as it is available.\n\nBest,\nJordan"
+      },
+      "ui": {
+        "approved": false
+      },
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "communicate", "confirmation": "hard" },
+        { "actionClass": "transact", "confirmation": "hard" },
+        { "actionClass": "destructive", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": false,
+      "allowedCapabilities": [],
+      "redactInVoice": ["recipient", "body"],
+      "sourceBadgeRules": {
+        "showFor": ["recipient"]
+      },
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_thread_context",
+        "kind": "user_input",
+        "label": "Conversation thread context"
+      },
+      {
+        "id": "src_assistant_draft",
+        "kind": "model_inference",
+        "label": "Assistant-authored draft",
+        "retrievedAt": "2026-03-27T10:10:00Z"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Reviewing one outbound customer message draft before send.",
+      "preferredFocus": "composer",
+      "landmarks": ["header", "main", "aside", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": false
+    }
+  }
+}

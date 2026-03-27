@@ -1,0 +1,27 @@
+{
+  "id": "conformance/conformance",
+  "title": "Conformance",
+  "description": "What it means to conform to TSR and the immediate next increment to make the spec testable.",
+  "source": "@site/docs/conformance/index.md",
+  "sourceDirName": "conformance",
+  "slug": "/conformance/",
+  "permalink": "/tsr-spec/conformance/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "conformance",
+    "title": "Conformance",
+    "description": "What it means to conform to TSR and the immediate next increment to make the spec testable."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Security Model",
+    "permalink": "/tsr-spec/security-model/"
+  },
+  "next": {
+    "title": "Examples",
+    "permalink": "/tsr-spec/examples/"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "invalid/events/surface-mismatch.filter-change.v0_1.json",
+  "fixtureKind": "event",
+  "expectedValidity": "invalid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [
+    "event.surface_id.matches_context"
+  ],
+  "requiredChecks": []
+}

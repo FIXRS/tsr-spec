@@ -1,0 +1,24 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "surfaces/promoted-artifact.v0_1.json",
+  "expectedValidity": "valid",
+  "expectedDiagnostics": [],
+  "expectedSurface": {
+    "id": "surf_growth_dashboard_01",
+    "revision": 18,
+    "kind": "artifact",
+    "intent": "explore_data",
+    "persistence": "artifact"
+  },
+  "requiredChecks": [
+    "document.version.supported",
+    "surface.kind.supported",
+    "lifecycle.resume_key.present_for_artifact",
+    "views.bindings.resolve",
+    "actions.targets.resolve",
+    "sources.references.resolve",
+    "state.focused.resolve",
+    "accessibility.voice_summary.present",
+    "policy.external_navigation.explicit"
+  ]
+}

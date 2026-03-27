@@ -1,0 +1,190 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_schedule_book_01",
+    "revision": 2,
+    "kind": "inline",
+    "intent": "schedule_book",
+    "title": "Book a project review slot",
+    "summary": "Three available time slots next week with conflict indicators.",
+    "layout": {
+      "template": "split",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "aside", "role": "aside" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "slot_01",
+        "type": "Event",
+        "title": "Tuesday 10:00 AM",
+        "subtitle": "45 minutes",
+        "fields": {
+          "startAt": { "value": "2026-03-31T10:00:00Z", "sourceRef": "src_calendar_search" },
+          "endAt": { "value": "2026-03-31T10:45:00Z", "sourceRef": "src_calendar_search" },
+          "timezone": { "value": "UTC", "sourceRef": "src_calendar_search" },
+          "conflictStatus": { "value": "clear", "sourceRef": "src_calendar_search" }
+        },
+        "status": "available"
+      },
+      {
+        "id": "slot_02",
+        "type": "Event",
+        "title": "Wednesday 2:00 PM",
+        "subtitle": "45 minutes",
+        "fields": {
+          "startAt": { "value": "2026-04-01T14:00:00Z", "sourceRef": "src_calendar_search" },
+          "endAt": { "value": "2026-04-01T14:45:00Z", "sourceRef": "src_calendar_search" },
+          "timezone": { "value": "UTC", "sourceRef": "src_calendar_search" },
+          "conflictStatus": { "value": "soft-conflict", "sourceRef": "src_calendar_search" }
+        },
+        "status": "available"
+      },
+      {
+        "id": "slot_03",
+        "type": "Event",
+        "title": "Thursday 9:30 AM",
+        "subtitle": "45 minutes",
+        "fields": {
+          "startAt": { "value": "2026-04-02T09:30:00Z", "sourceRef": "src_calendar_search" },
+          "endAt": { "value": "2026-04-02T10:15:00Z", "sourceRef": "src_calendar_search" },
+          "timezone": { "value": "UTC", "sourceRef": "src_calendar_search" },
+          "conflictStatus": { "value": "clear", "sourceRef": "src_calendar_search" }
+        },
+        "status": "available"
+      }
+    ],
+    "collections": [
+      {
+        "id": "slots",
+        "entityType": "Event",
+        "items": ["slot_01", "slot_02", "slot_03"],
+        "selectionMode": "single",
+        "sort": {
+          "field": "startAt",
+          "direction": "asc"
+        }
+      }
+    ],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "3 candidate slots available next week."
+        }
+      },
+      {
+        "id": "calendar",
+        "type": "calendar",
+        "zone": "main",
+        "sourceCollection": "slots",
+        "props": {
+          "timeField": "startAt",
+          "endField": "endAt"
+        },
+        "actions": ["hold", "book"]
+      },
+      {
+        "id": "inspector",
+        "type": "inspector",
+        "zone": "aside",
+        "sourceEntity": "slot_01",
+        "props": {
+          "fields": ["startAt", "endAt", "timezone", "conflictStatus"]
+        }
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["hold", "book"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "hold",
+        "label": "Hold slot",
+        "actionClass": "mutate",
+        "target": "focused",
+        "confirmation": "soft",
+        "invoke": {
+          "kind": "tool",
+          "ref": "calendar.hold",
+          "params": {
+            "entityRef": "$state.focused"
+          }
+        },
+        "style": "secondary",
+        "reversible": true
+      },
+      {
+        "id": "book",
+        "label": "Book slot",
+        "actionClass": "transact",
+        "target": "focused",
+        "confirmation": "hard",
+        "invoke": {
+          "kind": "tool",
+          "ref": "calendar.book",
+          "params": {
+            "entityRef": "$state.focused"
+          }
+        },
+        "style": "primary",
+        "reversible": false
+      }
+    ],
+    "state": {
+      "selected": ["slot_01"],
+      "focused": "slot_01",
+      "filters": {},
+      "sort": {
+        "field": "startAt",
+        "direction": "asc"
+      },
+      "drafts": {},
+      "ui": {
+        "showConflictLegend": true
+      },
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "transact", "confirmation": "hard" },
+        { "actionClass": "communicate", "confirmation": "hard" },
+        { "actionClass": "destructive", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": false,
+      "allowedCapabilities": ["modal"],
+      "redactInVoice": [],
+      "sourceBadgeRules": {
+        "showFor": ["startAt", "endAt", "conflictStatus"]
+      },
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_calendar_search",
+        "kind": "tool",
+        "label": "Calendar availability search",
+        "retrievedAt": "2026-03-27T10:15:00Z"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Three available scheduling slots are shown with conflict status and booking actions.",
+      "preferredFocus": "calendar",
+      "landmarks": ["header", "main", "aside", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": false
+    }
+  }
+}

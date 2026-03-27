@@ -1,0 +1,140 @@
+{
+  "version": "tsr/0.1",
+  "patchSequence": {
+    "sequenceId": "seq_compare_discovery_01",
+    "surfaceId": "surf_compare_options_01",
+    "patches": [
+      {
+        "patchId": "patch_compare_append_01",
+        "baseRevision": 1,
+        "reason": "tool_result",
+        "ops": [
+          {
+            "op": "entity.upsert",
+            "entities": [
+              {
+                "id": "listing_04",
+                "type": "Listing",
+                "title": "iPhone 13 128GB Red",
+                "fields": {
+                  "price": {
+                    "value": 465,
+                    "sourceRef": "src_market_1"
+                  },
+                  "condition": {
+                    "value": "used",
+                    "sourceRef": "src_market_1"
+                  },
+                  "storage": {
+                    "value": "128GB",
+                    "sourceRef": "src_market_1"
+                  },
+                  "shipping": {
+                    "value": "Free",
+                    "sourceRef": "src_market_1"
+                  }
+                },
+                "status": "available"
+              },
+              {
+                "id": "listing_05",
+                "type": "Listing",
+                "title": "iPhone 13 256GB Green",
+                "fields": {
+                  "price": {
+                    "value": 559,
+                    "sourceRef": "src_market_2"
+                  },
+                  "condition": {
+                    "value": "refurbished",
+                    "sourceRef": "src_market_2"
+                  },
+                  "storage": {
+                    "value": "256GB",
+                    "sourceRef": "src_market_2"
+                  },
+                  "shipping": {
+                    "value": "Express",
+                    "sourceRef": "src_market_2"
+                  }
+                },
+                "status": "available"
+              }
+            ]
+          },
+          {
+            "op": "collection.append",
+            "collectionId": "results",
+            "items": [
+              "listing_04",
+              "listing_05"
+            ]
+          },
+          {
+            "op": "notice.show",
+            "level": "info",
+            "message": "Found 2 additional listings."
+          }
+        ]
+      },
+      {
+        "patchId": "patch_compare_refine_02",
+        "baseRevision": 2,
+        "reason": "assistant",
+        "ops": [
+          {
+            "op": "collection.replace",
+            "collection": {
+              "id": "results",
+              "entityType": "Listing",
+              "items": [
+                "listing_02",
+                "listing_05"
+              ],
+              "selectionMode": "multi",
+              "compareLimit": 4,
+              "filters": {
+                "condition": [
+                  "refurbished"
+                ]
+              },
+              "sort": {
+                "field": "price",
+                "direction": "asc"
+              },
+              "pagination": {
+                "cursor": "page_02",
+                "hasMore": true
+              }
+            }
+          },
+          {
+            "op": "state.set",
+            "path": "state.filters.condition",
+            "value": [
+              "refurbished"
+            ]
+          },
+          {
+            "op": "state.set",
+            "path": "state.selected",
+            "value": [
+              "listing_02",
+              "listing_05"
+            ]
+          },
+          {
+            "op": "state.set",
+            "path": "state.focused",
+            "value": "listing_05"
+          },
+          {
+            "op": "notice.show",
+            "level": "info",
+            "message": "Showing refurbished matches first."
+          }
+        ]
+      }
+    ]
+  }
+}

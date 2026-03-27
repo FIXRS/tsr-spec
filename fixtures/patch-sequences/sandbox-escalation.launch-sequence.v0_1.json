@@ -1,0 +1,47 @@
+{
+  "version": "tsr/0.1",
+  "patchSequence": {
+    "sequenceId": "seq_sandbox_launch_01",
+    "surfaceId": "surf_workflow_editor_launch_01",
+    "patches": [
+      {
+        "patchId": "patch_sandbox_prepare_01",
+        "baseRevision": 4,
+        "reason": "assistant",
+        "ops": [
+          {
+            "op": "state.set",
+            "path": "state.ui.launchIntent",
+            "value": "ui://workflow-editor"
+          },
+          {
+            "op": "state.set",
+            "path": "state.ui.launchMode",
+            "value": "fullscreen"
+          },
+          {
+            "op": "notice.show",
+            "level": "info",
+            "message": "Opening governed workflow editor sandbox."
+          }
+        ]
+      },
+      {
+        "patchId": "patch_sandbox_launch_02",
+        "baseRevision": 5,
+        "reason": "host",
+        "ops": [
+          {
+            "op": "app.launch",
+            "resourceUri": "ui://workflow-editor",
+            "mode": "fullscreen",
+            "title": "Workflow editor"
+          },
+          {
+            "op": "surface.close"
+          }
+        ]
+      }
+    ]
+  }
+}

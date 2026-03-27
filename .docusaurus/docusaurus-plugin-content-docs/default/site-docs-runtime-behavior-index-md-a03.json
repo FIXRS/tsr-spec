@@ -1,0 +1,27 @@
+{
+  "id": "runtime-behavior/runtime-behavior",
+  "title": "Runtime Behavior",
+  "description": "Responsibilities, lifecycle, and execution model of a TSR runtime.",
+  "source": "@site/docs/runtime-behavior/index.md",
+  "sourceDirName": "runtime-behavior",
+  "slug": "/runtime-behavior/",
+  "permalink": "/tsr-spec/runtime-behavior/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "runtime-behavior",
+    "title": "Runtime Behavior",
+    "description": "Responsibilities, lifecycle, and execution model of a TSR runtime."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Patches",
+    "permalink": "/tsr-spec/patches/"
+  },
+  "next": {
+    "title": "Security Model",
+    "permalink": "/tsr-spec/security-model/"
+  }
+}

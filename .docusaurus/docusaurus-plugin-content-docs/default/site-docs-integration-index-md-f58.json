@@ -1,0 +1,23 @@
+{
+  "id": "integration/integration",
+  "title": "Integration",
+  "description": "How TSR fits into an assistant architecture and how to adopt it without collapsing layers together.",
+  "source": "@site/docs/integration/index.md",
+  "sourceDirName": "integration",
+  "slug": "/integration/",
+  "permalink": "/tsr-spec/integration/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "integration",
+    "title": "Integration",
+    "description": "How TSR fits into an assistant architecture and how to adopt it without collapsing layers together."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Examples",
+    "permalink": "/tsr-spec/examples/"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/tsr-spec/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/tsr-spec/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "actions/actions",
+              "path": "/tsr-spec/actions/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "conformance/conformance",
+              "path": "/tsr-spec/conformance/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "core-concepts/core-concepts",
+              "path": "/tsr-spec/core-concepts/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "entities/entities",
+              "path": "/tsr-spec/entities/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "events/events",
+              "path": "/tsr-spec/events/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "examples/examples",
+              "path": "/tsr-spec/examples/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "host-contract/host-contract",
+              "path": "/tsr-spec/host-contract/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integration/integration",
+              "path": "/tsr-spec/integration/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "intro",
+              "path": "/tsr-spec/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "introduction/introduction",
+              "path": "/tsr-spec/introduction/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "patches/patches",
+              "path": "/tsr-spec/patches/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "runtime-behavior/runtime-behavior",
+              "path": "/tsr-spec/runtime-behavior/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "security-model/security-model",
+              "path": "/tsr-spec/security-model/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "surface-model/surface-model",
+              "path": "/tsr-spec/surface-model/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "views/views",
+              "path": "/tsr-spec/views/",
+              "sidebar": "docs"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docs": {
+              "link": {
+                "path": "/tsr-spec/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

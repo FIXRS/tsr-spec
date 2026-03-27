@@ -1,0 +1,138 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_workflow_editor_launch_01",
+    "revision": 4,
+    "kind": "panel",
+    "intent": "create_edit",
+    "title": "Prepare workflow editor session",
+    "summary": "Confirm the initial workflow settings, then open the full visual editor.",
+    "layout": {
+      "template": "wizard",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "aside", "role": "aside" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "workflow_draft_01",
+        "type": "Document",
+        "title": "Customer onboarding workflow",
+        "fields": {
+          "name": { "value": "Customer onboarding workflow", "sourceRef": "src_user_request" },
+          "goal": { "value": "Automate welcome email, task assignment, and follow-up.", "sourceRef": "src_user_request" },
+          "editorMode": { "value": "visual", "sourceRef": "src_assistant_plan" }
+        },
+        "status": "draft"
+      }
+    ],
+    "collections": [],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "A native setup surface gathers initial workflow settings before opening the full editor."
+        }
+      },
+      {
+        "id": "setup_form",
+        "type": "form",
+        "zone": "main",
+        "sourceEntity": "workflow_draft_01",
+        "props": {
+          "fields": ["name", "goal", "editorMode"]
+        },
+        "actions": ["open_editor"]
+      },
+      {
+        "id": "steps",
+        "type": "stepper",
+        "zone": "aside",
+        "props": {
+          "steps": ["Define workflow", "Review setup", "Open visual editor"],
+          "currentStep": 2
+        }
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["open_editor"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open_editor",
+        "label": "Open visual editor",
+        "actionClass": "privileged",
+        "target": "entity:workflow_draft_01",
+        "confirmation": "hard",
+        "invoke": {
+          "kind": "launch_app",
+          "ref": "ui://workflow-editor",
+          "params": {
+            "resourceUri": "ui://workflow-editor",
+            "mode": "fullscreen"
+          }
+        },
+        "style": "primary",
+        "reversible": false,
+        "requiresCapabilities": ["modal"]
+      }
+    ],
+    "state": {
+      "selected": [],
+      "focused": "workflow_draft_01",
+      "filters": {},
+      "sort": {},
+      "drafts": {},
+      "ui": {
+        "setupComplete": true
+      },
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "privileged", "confirmation": "hard" },
+        { "actionClass": "transact", "confirmation": "hard" },
+        { "actionClass": "communicate", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": false,
+      "allowedCapabilities": ["modal"],
+      "redactInVoice": [],
+      "sourceBadgeRules": {
+        "showFor": []
+      },
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_user_request",
+        "kind": "user_input",
+        "label": "User workflow request"
+      },
+      {
+        "id": "src_assistant_plan",
+        "kind": "model_inference",
+        "label": "Assistant setup plan",
+        "retrievedAt": "2026-03-27T10:25:00Z"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Setup steps for a workflow editor are shown before opening the full visual editor.",
+      "preferredFocus": "setup_form",
+      "landmarks": ["header", "main", "aside", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": false
+    }
+  }
+}

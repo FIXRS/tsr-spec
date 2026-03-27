@@ -1,0 +1,16 @@
+{
+  "version": "tsr/0.1",
+  "patch": {
+    "patchId": "patch_stale_revision_01",
+    "surfaceId": "surf_compare_options_01",
+    "baseRevision": 99,
+    "reason": "assistant",
+    "ops": [
+      {
+        "op": "notice.show",
+        "level": "info",
+        "message": "This patch should fail because its base revision is stale."
+      }
+    ]
+  }
+}

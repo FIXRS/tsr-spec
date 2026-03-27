@@ -1,0 +1,25 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "surfaces/sandbox-escalation.v0_1.json",
+  "expectedValidity": "valid",
+  "expectedDiagnostics": [],
+  "expectedSurface": {
+    "id": "surf_workflow_editor_launch_01",
+    "revision": 4,
+    "kind": "panel",
+    "intent": "create_edit",
+    "persistence": "ephemeral"
+  },
+  "requiredChecks": [
+    "document.version.supported",
+    "layout.zones.resolve",
+    "views.bindings.resolve",
+    "actions.targets.resolve",
+    "actions.privileged_confirmation.enforced",
+    "actions.required_capabilities.declared",
+    "policy.allowed_capabilities.declared",
+    "sandbox.launch_reference.present",
+    "sources.references.resolve",
+    "accessibility.voice_summary.present"
+  ]
+}

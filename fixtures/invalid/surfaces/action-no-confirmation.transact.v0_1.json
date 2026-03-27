@@ -1,0 +1,105 @@
+{
+  "version": "tsr/0.1",
+  "surface": {
+    "id": "surf_invalid_transact_confirmation_01",
+    "revision": 1,
+    "kind": "panel",
+    "intent": "compare_options",
+    "title": "Invalid transact confirmation example",
+    "summary": "Surface intentionally violates high-risk confirmation rules.",
+    "layout": {
+      "template": "split",
+      "zones": [
+        { "id": "header", "role": "header" },
+        { "id": "main", "role": "main" },
+        { "id": "footer", "role": "footer" }
+      ]
+    },
+    "entities": [
+      {
+        "id": "listing_01",
+        "type": "Listing",
+        "title": "iPhone 13 128GB Blue",
+        "fields": {
+          "price": { "value": 489, "sourceRef": "src_market_1" }
+        },
+        "status": "available"
+      }
+    ],
+    "collections": [
+      {
+        "id": "results",
+        "entityType": "Listing",
+        "items": ["listing_01"],
+        "selectionMode": "single"
+      }
+    ],
+    "views": [
+      {
+        "id": "summary",
+        "type": "summary",
+        "zone": "header",
+        "props": {
+          "text": "One listing loaded."
+        }
+      },
+      {
+        "id": "actions",
+        "type": "actionBar",
+        "zone": "footer",
+        "actions": ["buy"]
+      }
+    ],
+    "actions": [
+      {
+        "id": "buy",
+        "label": "Buy now",
+        "actionClass": "transact",
+        "target": "focused",
+        "confirmation": "none",
+        "invoke": {
+          "kind": "host",
+          "ref": "checkout.request"
+        },
+        "style": "primary"
+      }
+    ],
+    "state": {
+      "selected": ["listing_01"],
+      "focused": "listing_01",
+      "filters": {},
+      "sort": {},
+      "drafts": {},
+      "ui": {},
+      "pendingOps": [],
+      "confirmations": {}
+    },
+    "policy": {
+      "defaultConfirmation": "soft",
+      "classPolicies": [
+        { "actionClass": "transact", "confirmation": "hard" }
+      ],
+      "allowExternalNavigation": false,
+      "allowedCapabilities": [],
+      "redactInVoice": [],
+      "sourceBadgeRules": {},
+      "showInferenceBadges": true
+    },
+    "sources": [
+      {
+        "id": "src_market_1",
+        "kind": "web",
+        "label": "Marketplace listing 1"
+      }
+    ],
+    "accessibility": {
+      "voiceSummary": "Invalid surface used to test transact confirmation requirements.",
+      "preferredFocus": "actions",
+      "landmarks": ["header", "main", "footer"]
+    },
+    "lifecycle": {
+      "persistence": "ephemeral",
+      "promotable": false
+    }
+  }
+}

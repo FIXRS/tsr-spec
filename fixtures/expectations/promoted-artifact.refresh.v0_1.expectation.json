@@ -1,0 +1,24 @@
+{
+  "expectationVersion": "tsr-validator-expectation/0.1",
+  "fixture": "patches/promoted-artifact.refresh.v0_1.json",
+  "fixtureKind": "patch",
+  "expectedValidity": "valid",
+  "diagnosticMatch": "exact",
+  "expectedDiagnostics": [],
+  "requiredChecks": [],
+  "expectedRuntimeState": {
+    "revision": 19,
+    "entityIdsExact": [
+      "series_signups",
+      "series_conversion"
+    ],
+    "statePaths": {
+      "ui.lastRefreshAt": "2026-03-27T10:40:00Z"
+    },
+    "noticesCount": 1,
+    "lastNotice": {
+      "level": "success",
+      "message": "Dashboard data refreshed."
+    }
+  }
+}
